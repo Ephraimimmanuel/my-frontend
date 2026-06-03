@@ -14,5 +14,11 @@ pipeline {
                 bat 'npm run build'
             }
         }
+
+        stage('Deploy to S3') {
+            steps {
+                bat 'aws s3 sync build s3://ephraimimmanuel --delete'
+            }
+        }
     }
 }
