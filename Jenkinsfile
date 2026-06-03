@@ -16,9 +16,9 @@ pipeline {
         }
 
         stage('Deploy to S3') {
-            steps {
-                bat 'aws s3 sync build s3://ephraimimmanuel --delete'
-            }
-        }
+    steps {
+        bat '"C:\\Program Files\\Amazon\\AWSCLIV2\\aws.exe" s3 sync build s3://ephraimimmanuel --delete'
+    }
+}
     }
 }
